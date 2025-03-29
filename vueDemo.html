@@ -10,5 +10,15 @@
     <div id="app">
         <h2>To-Do List</h2>
     </div>    
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    newTask: "",
+                    tasks: []
+                };
+            }
+        }).mount("#app");
+    </script>    
 </body>
 </html>
