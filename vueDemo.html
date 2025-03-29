@@ -12,6 +12,12 @@
     </div>
     <input v-model="newTask" placeholder="Add a task">
     <button @click="addTask">Add</button>
+    <ul>
+        <li v-for="(task, index) in tasks" :key="index">
+            {{ task }}
+            <button @click="removeTask(index)">X</button>
+        </li>
+    </ul>    
     <script>
         Vue.createApp({
             data() {
