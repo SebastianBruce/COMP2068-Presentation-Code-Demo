@@ -1,6 +1,83 @@
+/* Set the overall page background to black and default text color to white */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the app container and add some padding */
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Style the title (h2) to be centered and red */
+h2 {
+    color: red;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Style the input fields for task and owner assignment */
+input {
+    width: 250px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Style the main "Add" button to be red with white text */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Specific style ONLY for the Add button at the top */
+#app > button {
+    background-color: red;
+    color: white;
+}
+
+/* Style task action buttons to match the black theme */
+li button {
+    background-color: black;
+    color: white;
+    margin-left: 5px;
+}
+
+/* Style the task list container */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Style each individual task item */
+li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: black; /* Fully black to match the rest of the theme */
+    border-radius: 5px;
+}
+
+/* Style for tasks marked as "in-progress" */
 .in-progress {
     color: orange;
 }
+
+/* Style for tasks marked as "complete" */
 .complete {
     color: green;
 }
