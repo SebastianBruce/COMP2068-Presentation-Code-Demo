@@ -15,7 +15,7 @@ body {
     padding: 40px 20px;
 }
 
-/* Style the title (h2) to be centered and red */
+/* Style the title to be centered and red */
 h2 {
     color: red;
     text-align: center;
@@ -72,12 +72,12 @@ li {
     border-radius: 5px;
 }
 
-/* Style for tasks marked as "in-progress" */
+
 .in-progress {
     color: orange;
 }
 
-/* Style for tasks marked as "complete" */
+
 .complete {
     color: green;
 }
