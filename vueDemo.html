@@ -5,39 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue.js To-Do List</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="app">
         <h2>To-Do List</h2>
         <input v-model="newTask" placeholder="Add a task">
+        <input v-model="newTaskOwner" list="owners" placeholder="Assign a name (optional)">
+
+        <!-- Shows previously entered names -->
+        <datalist id="owners">
+            <option v-for="owner in owners" :key="owner" :value="owner"></option>
+        </datalist>
+
         <button @click="addTask">Add</button>
+
         <ul>
-            <li v-for="(task, index) in tasks" :key="index">
-                {{ task }}
+            <!-- Loops through each task -->
+            <li v-for="(task, index) in tasks" :key="index" :class="task.status">
+                <!-- Displays the task -->
+                {{ task.text }} 
+                <!-- Displays the assigned owners name -->
+                <span v-if="task.owner">(Assigned to: {{ task.owner }})</span>
+                
+                <button @click="setStatus(index, 'in-progress')">🟠</button>
+                <button @click="setStatus(index, 'complete')">✅</button>
                 <button @click="removeTask(index)">❌</button>
             </li>
         </ul>
     </div>
-    <script>
-        Vue.createApp({
-            data() {
-                return {
-                    newTask: "",
-                    tasks: []
-                };
-            },
-            methods: {
-                addTask() {
-                    if (this.newTask.trim()) {
-                        this.tasks.push(this.newTask);
-                        this.newTask = "";
-                    }
-                },
-                removeTask(index) {
-                    this.tasks.splice(index, 1);
-                }
-            }
-        }).mount("#app");
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
