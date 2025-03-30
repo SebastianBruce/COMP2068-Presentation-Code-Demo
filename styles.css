@@ -60,24 +60,54 @@ li button {
 ul {
     list-style: none;
     padding: 0;
-    width: 100%;
-    max-width: 600px;
+    width: 600px;
+    /* max-width: 600px; */
 }
 
 /* Style each individual task item */
 li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 10px;
     margin: 10px 0;
     background-color: black; /* Fully black to match the rest of the theme */
     border-radius: 5px;
 }
 
-
 .in-progress {
     color: orange;
 }
 
-
 .complete {
     color: green;
+}
+
+#actitivyDetails{
+    flex: 7;
+}
+
+#activityStatus{
+    flex: 3;
+}
+
+.statusButton{
+    padding: 5px;
+}
+
+#inProgressTasks{
+    background-color: orange;
+}
+
+#completedTasks{
+    background-color: green;
+}
+
+#addTasksMenu{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border: 3px solid red;
+    border-radius: 15px;
+    margin-bottom: 1em;
 }
